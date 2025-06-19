@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Pacifico&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes floatBalloon {
+  0%, 100% {
+    transform: translateY(100vh) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(5deg);
+  }
+}
+
+@keyframes floatHeart {
+  0%, 100% {
+    transform: translateY(100vh) rotate(-10deg) scale(0.8);
+  }
+  50% {
+    transform: translateY(-50px) rotate(10deg) scale(1.2);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.8) rotate(180deg);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes firework {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5) rotate(180deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1.2s ease-out;
+}
+
+.animate-sparkle {
+  animation: sparkle 2s infinite;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #ec4899, #8b5cf6, #fbbf24, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Enhanced glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Enhanced heart pulse animation */
+@keyframes heartPulse {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.5));
+  }
+  50% {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 20px rgba(255, 105, 180, 0.8));
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.5));
+  }
+}
+
+.animate-heart-pulse {
+  animation: heartPulse 1.8s ease-in-out infinite;
+}
+
+/* Enhanced birthday cake bounce */
+@keyframes cakeBounce {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translateY(-15px) rotate(3deg) scale(1.05);
+  }
+  75% {
+    transform: translateY(-8px) rotate(-3deg) scale(1.02);
+  }
+}
+
+.animate-cake-bounce {
+  animation: cakeBounce 2.5s ease-in-out infinite;
+}
+
+/* Enhanced confetti shimmer */
+@keyframes confettiShimmer {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3) rotate(180deg);
+  }
+}
+
+.animate-confetti-shimmer {
+  animation: confettiShimmer 1.8s ease-in-out infinite;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .mobile-text-scale {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+  }
+  
+  .mobile-birthday-title {
+    font-size: clamp(2.5rem, 10vw, 5rem);
+  }
+}
+
+/* Enhanced cute hover effects */
+.cute-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cute-hover:hover {
+  transform: translateY(-5px) scale(1.05) rotate(2deg);
+  box-shadow: 0 15px 35px rgba(236, 72, 153, 0.3);
+}
+
+/* Enhanced birthday party atmosphere */
+@keyframes partyLights {
+  0%, 100% {
+    box-shadow: 0 0 30px rgba(255, 105, 180, 0.4);
+  }
+  20% {
+    box-shadow: 0 0 30px rgba(138, 43, 226, 0.4);
+  }
+  40% {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+  }
+  60% {
+    box-shadow: 0 0 30px rgba(50, 205, 50, 0.4);
+  }
+  80% {
+    box-shadow: 0 0 30px rgba(255, 69, 0, 0.4);
+  }
+}
+
+.party-lights {
+  animation: partyLights 4s ease-in-out infinite;
+}
+
+/* Enhanced floating animation for elements */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+  66% {
+    transform: translateY(-6px) rotate(-2deg);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Enhanced birthday special effects */
+@keyframes birthdayGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(255, 105, 180, 0.6));
+  }
+  50% {
+    filter: drop-shadow(0 0 25px rgba(255, 105, 180, 0.9));
+  }
+}
+
+.birthday-glow {
+  animation: birthdayGlow 2.5s ease-in-out infinite;
+}
+
+/* Enhanced celebration burst effect */
+@keyframes celebrationBurst {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5) rotate(180deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(0) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.celebration-burst {
+  animation: celebrationBurst 2.5s ease-out infinite;
+}
+
+/* New magical sparkle effect */
+@keyframes magicalSparkle {
+  0%, 100% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  25% {
+    transform: scale(0.5) rotate(90deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1) rotate(180deg);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(0.8) rotate(270deg);
+    opacity: 0.7;
+  }
+}
+
+.magical-sparkle {
+  animation: magicalSparkle 3s ease-in-out infinite;
+}
+
+/* Rainbow text effect */
+@keyframes rainbow {
+  0% { color: #ff0000; }
+  16% { color: #ff8000; }
+  33% { color: #ffff00; }
+  50% { color: #00ff00; }
+  66% { color: #0080ff; }
+  83% { color: #8000ff; }
+  100% { color: #ff0000; }
+}
+
+.rainbow-text {
+  animation: rainbow 3s linear infinite;
+}
+
+/* Bouncy entrance animation */
+@keyframes bouncyEntrance {
+  0% {
+    transform: scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) rotate(0deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.bouncy-entrance {
+  animation: bouncyEntrance 1s ease-out;
+}
+
+/* Wiggle animation for interactive elements */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(3deg); }
+  75% { transform: rotate(-3deg); }
+}
+
+.animate-wiggle {
+  animation: wiggle 0.5s ease-in-out;
+}
+
+/* Pulsing border effect */
+@keyframes pulsingBorder {
+  0%, 100% {
+    border-color: rgba(255, 105, 180, 0.5);
+    box-shadow: 0 0 0 0 rgba(255, 105, 180, 0.4);
+  }
+  50% {
+    border-color: rgba(255, 105, 180, 1);
+    box-shadow: 0 0 0 10px rgba(255, 105, 180, 0);
+  }
+}
+
+.pulsing-border {
+  animation: pulsingBorder 2s ease-in-out infinite;
+}
+
+/* Gradient animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-shift {
+  background: linear-gradient(-45deg, #ff69b4, #8a2be2, #ffd700, #ff1493);
+  background-size: 400% 400%;
+  animation: gradientShift 4s ease infinite;
+}
+
+/* Typewriter effect */
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid;
+  white-space: nowrap;
+  animation: typewriter 3s steps(40, end);
+}
+
+/* Zoom in effect */
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.zoom-in {
+  animation: zoomIn 0.8s ease-out;
+}
